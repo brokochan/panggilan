@@ -1,0 +1,7 @@
+{
+  "name": "panggilan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
