@@ -1,18 +1,21 @@
 <template>
-  <ion-app>
-    <ion-router-outlet />
-  </ion-app>
+  <ion-nav :root="component"></ion-nav>
 </template>
 
 <script lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { IonNav } from '@ionic/vue';
+import HomePage from './views/HomePage.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    IonApp,
-    IonRouterOutlet
+    IonNav
+  },
+  setup () {
+    return {
+      component: HomePage
+    }
   }
 });
 </script>

@@ -1,8 +1,8 @@
 <template>
   <ion-page>
     <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
+      <ion-toolbar class="text-center">
+        <ion-title>Aplikasi Telepon By NEGOVA</ion-title>
       </ion-toolbar>
     </ion-header>
     
@@ -14,16 +14,18 @@
       </ion-header>
     
       <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-nav-link router-direction="forward" :component="goToTelepon">
+          <ion-button>Telepon</ion-button>
+        </ion-nav-link>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonNavLink } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import Telepon from './TeleponPage.vue';
 
 export default defineComponent({
   name: 'HomePage',
@@ -32,12 +34,20 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonButton,
+    IonNavLink
+  },
+  setup () {
+    return { goToTelepon: Telepon }
   }
 });
 </script>
 
 <style scoped>
+.text-center {
+    text-align: center;
+}
 #container {
   text-align: center;
   
